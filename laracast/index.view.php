@@ -13,10 +13,26 @@
 </head>
 <body>
 	<header>
-		<h1>Personal Data : </h1>
-		<p><b>Name : </b> <?= $name ?></p>
-		<p><b>Age : </b> <?= $age ?></p>
-		<p><b>Nationality : </b> <?= $nationality ?></p>
+		<!-- dirty way -->
+		<!-- <ul>
+			<?php
+				/*
+				foreach($names as $value)
+				{
+					echo "<li>$value</li>";
+				}
+				*/
+			?>
+		</ul> -->
+		<h1>Friends</h1>
+		<?php foreach($names as $name): ?>
+			<li><?= $name ?></li>
+		<?php endforeach; ?>
+
+		<h1>Favorite Animals</h1>
+		<?php foreach($animals as $animal): ?>
+			<li><?php echo $animal ?></li>
+		<?php endforeach; ?>
 	</header>
 </body>
 </html>

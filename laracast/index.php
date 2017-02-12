@@ -1,9 +1,17 @@
 <?php
 	// separating concerns
-	$name = "Jean";
-	$age = 19;
-	$nationality = "Dominican";
+	$names = [
+		"Jean",
+		"Isaias",
+		"Emiliano",
+		"Felipe",
+	];
 
-	// include the file
+	$animals = [
+		"cat",
+		"dog",
+		"lion"
+	];
+
 	require "index.view.php";
 ?>
