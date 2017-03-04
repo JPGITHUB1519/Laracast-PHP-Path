@@ -1,11 +1,10 @@
 <?php
-	$task = [
-			"title" => "Do the Homework",
-			"due" => "03/03/2017",
-			"assigned_to" => "Jean Pierre",
-			"completed" => False,
-			"extra" => True
-		];
-
-	require "index.view.php";
+	require 'functions.php';
+	$age = 20;
+	if(access($age))
+	{
+		$animals = ["dog", "cat"];
+		dd($animals);
+		require "index.view.php";
+	}
 ?>
