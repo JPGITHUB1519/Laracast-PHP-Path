@@ -21,6 +21,11 @@
 		<h1>Task List </h1>
 	</header>
 	<ul class="list-style: none;">
+		<?php if($task["extra"]) :?>
+			<h2>Extra Task</h2>
+		<?php else : ?>
+			<h2>No Extra Task</h2>
+		<?php endif;?>
 		<li>
 			<strong>Title : </strong>
 			<span class="little-space-left"><?= $task["title"] ?></span>
@@ -35,9 +40,12 @@
 		</li>
 		<li>
 			<strong>Status : </strong>
-			<span class="little-space-left"><?= $task["completed"] ? 'Complete' : 'Incomplete' ?></span>
+			<?php if($task["completed"]) :?>
+				<span class="icon">Complete</span>
+			<?php else : ?>
+				<span class="icon">Incomplete</span>
+			<?php endif; ?>
 		</li>
-		
 	</ul>
 	
 </body>
