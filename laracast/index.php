@@ -1,11 +1,12 @@
 <?php
 	
-	$query = require 'bootstrap.php';
-	require 'Task.php';
+	$database = require 'core/bootstrap.php';
+	$router = new Router;
 
-	$tasks = $query->selectAll('todos');
-	var_dump($tasks);
-	// var_dump($tasks[0]->foo());
-	require "index.view.php";
+	require 'routes.php';
+
+	// trim -> quit / on left and right
+	var_dump($app);
+	require Router::load('routes.php')->direct(Request::uri());
 
 ?>
