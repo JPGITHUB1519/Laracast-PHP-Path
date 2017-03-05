@@ -1,6 +1,8 @@
 <?php
 	
-	$database = require 'core/bootstrap.php';
+	// load composer
+	require 'vendor/autoload.php';
+	require 'core/bootstrap.php';
 	$router = new Router;
 
 	require 'routes.php';

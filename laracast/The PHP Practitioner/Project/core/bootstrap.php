@@ -5,10 +5,11 @@
 	$app = [];
 
 	$app['config'] = require 'config.php';
-	require 'core/Router.php';
-	require 'core/Request.php';
-	require 'core/database/Connection.php';
-	require 'core/database/QueryBuilder.php';
+	// we do no need it with composer
+	// require 'core/Router.php';
+	// require 'core/Request.php';
+	// require 'core/database/Connection.php';
+	// require 'core/database/QueryBuilder.php';
 	// CALLING STATIC METHOD
 	// $query = new QueryBuilder(Connection::make());
 
