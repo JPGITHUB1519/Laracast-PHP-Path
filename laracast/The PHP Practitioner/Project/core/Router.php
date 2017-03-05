@@ -2,7 +2,11 @@
 
 	class Router
 	{
-		protected $routes = [];
+		// ROUTES SPECIFIC FOR GET AND POST
+		public $routes = [
+			'GET' => [],
+			'POST' => []
+		];
 
 		public static function load($file)
 		{
@@ -11,17 +15,25 @@
 			require $file;
 			return $router;
 		}
-
-		public function define($routes)
+		
+		// SET GET ROUTES
+		public function get($uri, $controller)
 		{
-			$this->routes = $routes;
+			$this->routes['GET'][$uri] = $controller; 
 		}
 
-		public function direct($uri)
+		// SET POST ROUTES
+		public function post($uri, $controller)
 		{
-			if(array_key_exists($uri, $this->routes))
+			$this->routes['POST'][$uri] = $controller; 
+		}
+
+		// matching the url with the controller
+		public function direct($uri, $request_type)
+		{
+			if(array_key_exists($uri, $this->routes[$request_type]))
 			{
-				return $this->routes[$uri];
+				return $this->routes[$request_type][$uri];
 			}
 
 			throw new Exception('No routes define for this URI.');

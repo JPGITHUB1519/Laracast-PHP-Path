@@ -5,7 +5,8 @@
 
 	require 'routes.php';
 
-	// trim -> quit / on left and right
-	require Router::load('routes.php')->direct(Request::uri());
+	// requiring the file matched the url controller
+	require Router::load('routes.php')
+			->direct(Request::uri(), Request::method());
 
 ?>
