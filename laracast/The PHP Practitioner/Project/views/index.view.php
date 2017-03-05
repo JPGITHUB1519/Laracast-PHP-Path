@@ -1,10 +1,15 @@
 <?php require('partials/head.php'); ?> 
 
-<h1>Add a New Task</h1>
+<ul>
+	<?php foreach($users as $user) :?>
+		<li><?= $user->name; ?></li>
+	<?php endforeach; ?>
+</ul>
 
-<form method="POST" action="/tasks">
-	<label for="description">Description</label>
-	<input type="text" name="description">
+<h1>Submit Your Name</h1>
+
+<form method="POST" action="/names">
+	<input type="text" name="name">
 	<button type="submit">Submit</button>
 </form>
 

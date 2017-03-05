@@ -4,5 +4,10 @@
 	// ALL REQUEST, NO MATTER GET O POST
 	//var_dump($_REQUEST);
 
-	var_dump($_POST["name"]);
+	$app["database"]->insert('users',[
+			'name' => $_POST['name']
+		]);
+
+	// redirect to main
+	header('Location: /');
 ?>
