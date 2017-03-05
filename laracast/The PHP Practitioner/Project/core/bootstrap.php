@@ -1,20 +1,12 @@
 <?php
 	/* FACTORY */
 	/* Class to done all things that are made behind the scences */
-	
-	$app = [];
+	// update composer
 
-	$app['config'] = require 'config.php';
-	// we do no need it with composer
-	// require 'core/Router.php';
-	// require 'core/Request.php';
-	// require 'core/database/Connection.php';
-	// require 'core/database/QueryBuilder.php';
-	// CALLING STATIC METHOD
-	// $query = new QueryBuilder(Connection::make());
+	App::bind('config', require 'config.php');
 
-	$app["database"] =  new QueryBuilder(
-			Connection::make($app["config"]["database"])
-		);
+	App::bind('database', new QueryBuilder(
+			Connection::make(App::get('config')['database'])
+		));
 
 ?>

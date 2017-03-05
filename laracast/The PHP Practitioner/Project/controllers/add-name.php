@@ -4,7 +4,7 @@
 	// ALL REQUEST, NO MATTER GET O POST
 	//var_dump($_REQUEST);
 
-	$app["database"]->insert('users',[
+	App::get('database')->insert('users',[
 			'name' => $_POST['name']
 		]);
 
