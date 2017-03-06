@@ -9,4 +9,17 @@
 			Connection::make(App::get('config')['database'])
 		));
 
+	function view($name, $data=[])
+	{
+		// extract variables from file
+		extract($data);
+		// the view will have access to that data
+		return require "views/{$name}.view.php";
+	}
+
+	function redirect($path)
+	{
+		header("Location: /{$path}");
+	}
+
 ?>
