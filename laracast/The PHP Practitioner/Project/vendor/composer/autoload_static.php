@@ -12,6 +12,7 @@ class ComposerStaticInit4f9daaf9f26c424b56ca86dd616f936f
         'App\\Core\\App' => __DIR__ . '/../..' . '/core/App.php',
         'App\\Core\\Request' => __DIR__ . '/../..' . '/core/Request.php',
         'App\\Core\\Router' => __DIR__ . '/../..' . '/core/Router.php',
+        'App\\Models\\Project' => __DIR__ . '/../..' . '/app/models/project.php',
         'ComposerAutoloaderInit4f9daaf9f26c424b56ca86dd616f936f' => __DIR__ . '/..' . '/composer/autoload_real.php',
         'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
         'Composer\\Autoload\\ComposerStaticInit4f9daaf9f26c424b56ca86dd616f936f' => __DIR__ . '/..' . '/composer/autoload_static.php',
