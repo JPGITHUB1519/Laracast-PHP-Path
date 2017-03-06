@@ -1,4 +1,8 @@
 <?php
+		
+
+	use App\Core\App;
+		
 	/* FACTORY */
 	/* Class to done all things that are made behind the scences */
 	// update composer
@@ -14,7 +18,7 @@
 		// extract variables from file
 		extract($data);
 		// the view will have access to that data
-		return require "views/{$name}.view.php";
+		return require "app/views/{$name}.view.php";
 	}
 
 	function redirect($path)

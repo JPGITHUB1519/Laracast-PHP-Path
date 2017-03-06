@@ -1,5 +1,7 @@
 <?php
 
+	namespace App\Core;	
+
 	class Router
 	{
 		// ROUTES SPECIFIC FOR GET AND POST
@@ -44,7 +46,9 @@
 		// call action from controller
 		public function callAction($controller, $action)
 		{
-			$controller = new $controller;  
+			$controller = "App\\Controllers\\{$controller}";  
+			$controller = new $controller;
+			
 			if(! method_exists($controller, $action))
 			{
 				throw new Exception(
