@@ -11,17 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-	$tasks = [
-		"Become PHP Ninja",
-		"Become Go Ninja",
-		"Become Python Ninja"
-	];
-    return view('welcome', [
+Route::get('/tasks', function () {
+	$tasks = DB::table('tasks')->latest()->get();
+    return view('tasks/index', [
     		'tasks' => $tasks
     	]);
 });
 
-Route::get('/about', function(){
-	return view('about');
+Route::get('/tasks/{task}', function ($id) {
+	$task = DB::table('tasks')->find($id);
+    return view('tasks/show', [
+    		'task' => $task
+    	]);
 });
