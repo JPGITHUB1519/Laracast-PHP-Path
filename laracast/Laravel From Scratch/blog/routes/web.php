@@ -12,7 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	$tasks = [
+		"Become PHP Ninja",
+		"Become Go Ninja",
+		"Become Python Ninja"
+	];
+    return view('welcome', [
+    		'tasks' => $tasks
+    	]);
 });
 
 Route::get('/about', function(){

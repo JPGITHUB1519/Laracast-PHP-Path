@@ -3,7 +3,11 @@
 <head>
     <title>My App</title>
 </head>
-<body>
-    <h1>Hello World</h1>
+<body> 
+    <ul>
+        @foreach($tasks as $task)
+            <li>{{ $task }}</li>
+        @endforeach
+    </ul>
 </body>
 </html>
