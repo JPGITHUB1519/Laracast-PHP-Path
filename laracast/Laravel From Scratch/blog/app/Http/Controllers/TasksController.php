@@ -16,9 +16,11 @@ class TasksController extends Controller
 	    	]);
     }
 
-    public function show($id)
+    // route model binding
+    // same that task::find($id), it looks for automatically
+    public function show(Task $task)
     {
-    	$task = Task::find($id);
+    	// $task = Task::find($id);
 	    return view('tasks/show', [
 	    		'task' => $task
 	    	]);
