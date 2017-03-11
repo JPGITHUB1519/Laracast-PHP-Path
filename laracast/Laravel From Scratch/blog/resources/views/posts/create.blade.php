@@ -7,13 +7,16 @@
 			{{ csrf_field() }}
 			<div class="form-group">
 			    <label for="exampleInputEmail1">Title</label>
-			    <input type="text" class="form-control" name="title" required>
+			    <input type="text" class="form-control" name="title">
   			</div>
   			<div class="form-group">
 			    <label for="body">Body</label>
-			    <textarea class="form-control" name="body" required></textarea>
+			    <textarea class="form-control" name="body"></textarea>
   			</div>
-  			 <button type="submit" class="btn btn-primary">Publish</button>
+  			<div class="form-group">
+  				<button type="submit" class="btn btn-primary">Publish</button>
+  			</div>
+			@include ('layouts/errors')
 		</form>
 	 </div>
 @endsection

@@ -25,29 +25,16 @@ class PostController extends Controller
 
     public function store()
     {
-    	// view request data
-    	// dd(request()->all());
-
-    	// view one specific data
-    	// dd(request('title')); 
-
-    	// view many specifics data
-    	// dd(request(['title', 'body']));
-
-    	// create a new post from the request data
-    	// $post = new Post;
-    	// $post->title = request('title');
-    	// $post->body = request('body');
-    	// // save to the database
-    	// $post->save(); 
-    	// // and then redirect to the homepage
-
-    	// refactored way
+    	// validation
+    	$this->validate(request(), [
+    			'title' => 'required',
+    			'body' => 'required'
+    		]);
+    	
     	POST::create([
     			'title' => request('title'),
     			'body' => request('body')
     		]);
     	return redirect('/');
-
     }
 }
