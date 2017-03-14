@@ -19,4 +19,22 @@ class Post extends Model
     	return $this->hasMany(Comment::class);
     }
 
+    // add comment method
+
+    public function addComment($body)
+    {
+    	// long way
+
+    	// Comment::create([
+    	// 		'body' => $body,
+    	// 		'post_id' => $this->id
+
+    	// 	]);
+
+    	// short way
+
+    	// it give the id behind the scenes
+    	$this->comments()->create(compact('body'));
+    }
+
 }
