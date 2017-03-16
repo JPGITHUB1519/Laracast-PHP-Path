@@ -14,4 +14,9 @@ class Comment extends Model
     {
     	return $this->belongsTo(Post::class);
     }
-}
+
+    // one to many relation to user
+    public function user()
+    {
+    	return $this->belongsTo(User::class);
+    }
