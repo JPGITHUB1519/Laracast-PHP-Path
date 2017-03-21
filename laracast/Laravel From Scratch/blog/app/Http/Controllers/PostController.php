@@ -6,12 +6,28 @@ use Illuminate\Http\Request;
 
 use App\Post;
 
+use Carbon\Carbon;
+
 class PostController extends Controller
 {
+    public function __construct()
+    {
+        // Need Login Except
+        $this->middleware('auth')->except(['index', 'show']);
+    }
+
     public function index()
     {
-    	$posts = POST::latest()->get();
-    	return view('posts/index', compact('posts'));
+        $posts = Post::latest()
+            ->filter(request(['month', 'year']))
+            ->get();
+
+        $archives =  Post::selectRaw('year(created_at) year, monthname (created_at) month, count(*) published')
+        ->groupBy('year','month')
+        ->orderByRaw('min(created_at) DESC')
+        ->get()
+        ->toArray();
+    	return view('posts/index', compact('posts', 'archives'));
     }
 
     public function show(Post $post)
@@ -32,10 +48,9 @@ class PostController extends Controller
     			'body' => 'required'
     		]);
 
-    	POST::create([
-    			'title' => request('title'),
-    			'body' => request('body')
-    		]);
+    	auth()->user()->publish(
+                new Post(request(['title', 'body']))
+        );
     	return redirect('/');
     }
 }

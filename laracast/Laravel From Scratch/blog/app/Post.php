@@ -2,6 +2,8 @@
 
 namespace App;
 
+use Carbon\Carbon;
+
 // now using parent model
 // use Illuminate\Database\Eloquent\Model;
 
@@ -41,6 +43,19 @@ class Post extends Model
 
     	// it give the id behind the scenes
     	$this->comments()->create(compact('body'));
+    }
+
+    public function scopeFilter($query, $filters)
+    {
+        if($month = $filters['month'])
+        {
+            // converting string months to int month
+            $query->whereMonth('created_at', Carbon::parse($month)->month);
+        }
+        if($year = $filters['year'])
+        {
+            $query->whereYear('created_at', $year); 
+        }
     }
 
 }
