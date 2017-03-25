@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 return [
 
@@ -113,7 +113,7 @@ return [
     */
 
     'markdown' => [
-        'theme' => 'default',
+        'theme' => 'laracast',
 
         'paths' => [
             resource_path('views/vendor/mail'),
