@@ -12,9 +12,9 @@
 */
 
 
-$stripe = App::make('App\Billing\Stripe');
+// $stripe = App::make('App\Billing\Stripe');
 
-dd($stripe);
+// dd($stripe);
 
 Route::get('/', 'PostController@index')->name('home');
 Route::get('/posts/create', 'PostController@create');
