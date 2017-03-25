@@ -27,6 +27,12 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
+    // many to many relation with Tags
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
+
     // add comment method
 
     public function addComment($body)
