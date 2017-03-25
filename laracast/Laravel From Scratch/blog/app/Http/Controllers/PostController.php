@@ -26,7 +26,7 @@ class PostController extends Controller
         // $posts = Post::latest()
         //     ->filter(request(['month', 'year']))
         //     ->get();
-        dd($posts);
+        // dd($posts);
         $posts = $posts->all();
         return view('posts/index', compact('posts'));
     }

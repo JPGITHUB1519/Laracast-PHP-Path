@@ -5,7 +5,7 @@
 	{
 		protected $key;
 
-		public function __contruct($key)
+		public function __construct($key)
 		{
 			$this->key = $key;
 		}
