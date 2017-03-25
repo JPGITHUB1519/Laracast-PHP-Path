@@ -12,7 +12,7 @@ use App\Repositories\Posts;
 
 use Carbon\Carbon;
 
-class PostController extends Controller
+class PostsController extends Controller
 {
     public function __construct()
     {

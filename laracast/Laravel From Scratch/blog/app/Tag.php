@@ -9,4 +9,10 @@ class Tag extends Model
     {
     	return $this->belongsToMany(Post::Class);
     }
+
+    // In route model binding filter by name rather than the id
+    public function getRouteKeyName()
+    {
+    	return 'name';
+    }
 }
